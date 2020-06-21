@@ -1,0 +1,344 @@
+@charset "utf-8";
+
+/* 文書全体 */
+*{
+  overflow-x: hidden;
+}
+:root{
+  --gradiate-color: linear-gradient(top, hsl(0, 80%, 70%), rgb(230, 18, 159));
+}
+body{
+  overflow-x: hidden;
+  margin: 0;
+  font-family:sans-serif;
+  box-sizing: border-box;
+}
+/* モバイルメニューが出た時のbodyとm_menuの挙動 */
+body.m_menu-open{
+  overflow-y: hidden;
+}
+.m_menu-open #cover{
+  display: block;
+}
+.m_menu-open #m_menu{
+  right:0;
+}
+#m_menu{
+  z-index: 3;
+  position: fixed;
+  top:0;
+  right: -180px;
+  color: #fff;
+  background-color: #000;
+  padding: 8px;
+  box-sizing: border-box;
+  width: 180px;
+  min-height: 100%;
+  transition: 0.5s;
+}
+
+
+/* 特殊クラス JSで着脱を制御*/ 
+.hoverdGradation{
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: rgb(230, 18, 159); /* fallback color if gradients are not supported */
+  background-image: -webkit-linear-gradient(top, hsl(0, 80%, 70%), rgb(230, 18, 159)); /* For Chrome and Safari */
+  background-image:    -moz-linear-gradient(top, hsl(0, 80%, 70%), rgb(230, 18, 159)); /* For old Fx (3.6 to 15) */
+  background-image: -ms-linear-gradient(top, hsl(0, 80%, 70%), rgb(230, 18, 159)); /* For pre-releases of IE 10*/
+  background-image:      -o-linear-gradient(top, hsl(0, 80%, 70%), #bada55); /* For old Opera (11.1 to 12.0) */ 
+  background-image:         linear-gradient(to bottom, hsl(0, 80%, 70%), rgb(230, 18, 159)); /* Standard syntax; must be last */
+}
+
+#opening{
+  height: 1500px;
+  margin: 0;
+  background: rgba(0,0,0,1);
+}
+.num{
+  display: none;
+  position:fixed;
+  margin:0;
+  right:10px;
+  top:50px;
+}
+#scrollsign{
+  position: fixed;
+  top:300px;
+  width: 30px;
+  height:30px;
+  border-radius: 50px;
+  background-color:  rgb(230, 18, 159);
+  left: calc(50% - 15px);
+  /* アニメーションについてはanimation.cssで指定 */
+}
+#scroll{
+  position: fixed;
+  display: inline-block;
+  text-align: center;
+  font-size: 24px;
+  width: 100px;
+  top:450px;
+  left: calc(50% - 50px);
+  color: #fff;
+}
+#scroll:hover{
+  cursor: default;
+}
+/* カバー */
+#cover{
+  background: #000;
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 3;
+  display: none;
+}
+/* nav */
+.nav_container{
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  width: 80%;
+  height: 50px;
+  padding: 0 10%;
+  text-align: center;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.nav{
+  margin: 0 50px;
+}
+#m_nav_container{
+  margin: 60px 0;
+}
+.m_nav{
+  margin: 0;
+  display: block;
+}
+.nav, .m_nav{
+  line-height: 50px;
+  color:#fff;
+  text-decoration:none;
+}
+
+#show, #hide{
+  color: #fff;
+  cursor: pointer;
+  margin:10px 0;
+  width: 50px;
+  font-size: 30px;
+  text-align: center;
+  height: auto; 
+  right: 20px;
+  display: none;
+}
+#show{
+  position: fixed;
+}
+#hide{
+  float: right;
+  margin:12px;
+  display: none;
+}
+/* jqueryでカラーチェンジ */
+.changeColor{
+  color: palevioletred;
+}
+
+#link{
+  color: #fff;
+  text-decoration: none;
+}
+/* main */
+main{
+  margin: 0;
+}
+/* あいさつ */
+.greeting{
+  margin: 0 auto;
+  height: 400px;
+  background: #fff;
+  background-position: center , top;
+  background-size: 100%;
+}
+.reverseColor{
+  color: #fff;
+}
+#greeting{
+  text-align: center;
+  margin: 0 auto;
+  font-size: 36px;
+  font-family:sans-serif;
+}
+#logo{
+  width: 200px;
+  height: auto;
+  /* margin: 0; */
+  margin: 50px calc(50% - 100px) 0;
+}
+/* introduction */
+.introduction{
+  margin: 0;
+  padding-bottom: 100px;
+  background: #fff;
+}
+/* プロフィール */
+.profile{
+  font-size: 24px; text-align: center;
+}
+.profile span{
+  font-size: 16px;
+}
+.SNSLink{
+  margin: 0 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* WORKS REQUEST */
+.marin{
+  background: #fff;
+  overflow-x: hidden;
+}
+h1{
+  color: #000;
+  font-size: 120px;
+  font-weight: bold;
+  display: inline-block;
+  width: 800px;
+  text-align: center;
+  /* position: relative; */
+  margin: 100px calc(50% - 400px) 0px ;
+  /* REQUESTのmargin-topは id="requesttitle" で指定 */
+}
+h1:hover{
+  cursor: default;
+}
+/* WORKS */
+#works{
+  padding:75px 0;
+  margin:0;
+}
+/* safariのCSSハック */
+_::-webkit-full-page-media, _:future, :root #worklist{
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 1360px;
+}
+/* 通常 */
+#worklist{
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 1360px;
+}
+#worklist li{
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  padding: 0em;
+  margin: 20px;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
+}
+.workimg{
+  width: 300px;
+  height: 300px;
+}
+
+/* REQUEST FORM */
+#requesttitle{
+  margin-bottom: 0;
+}
+#request{
+  display: flex;
+  justify-content: center;
+}
+form{
+  margin: 0;
+  max-width: 800px;
+  min-width: 300px;
+}
+ul{
+  margin: 50px;
+  padding: 0;
+  list-style: none;
+}
+li{
+  padding: 0 0 50px;
+  width: 100%;
+}
+input[type=text], textarea{
+  -webkit-border-radius : 0;
+  border-top: none;
+  border-left: none;
+  border-bottom: 1px solid;
+  border-right: none;
+}
+.checkbox{
+  margin: 10px 10px ;
+  overflow: visible;
+}
+.checkbox:hover{
+  cursor: pointer;
+}
+.formtext{
+  -webkit-appearance: none;
+  width: 100%;
+}
+#textarea{
+  resize: none;
+  width: 100%;
+  max-height: 200px;
+  padding: 0;
+  line-height: 20px;
+}
+.btn{
+  -webkit-appearance: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 0 calc(50% - 100px) 50px;
+  color: #fff;
+  background: #000;
+  font-size: 16px;
+}
+.btn:hover{
+  opacity: .8;
+  cursor: pointer;
+}
+.inactive{
+  opacity: .5;
+}
+
+/* エラーメッセージ */
+.error_list{
+  padding: 10px 30px;
+  color: #ff2e5a;
+  font-size: 86%;
+  text-align: center;
+  border: 1px solid #ff2e5a;
+  border-radius: 5px;
+}
+.error_list li{
+  padding: 0;
+}
+
+/* footer */
+footer{
+  margin: 0 auto; padding: 30px; background: #000;
+}
+footer p{
+  color: #fff; text-align: center; line-height: 30px
+}
+/* jQueryで着脱を制御しながら文書全体で使用 */
+.vanish{
+  display: none;
+}

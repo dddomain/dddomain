@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+@media(max-width:1400px){
+  #worklist{
+  /* 通常 */
+  width: 1040px;
+  }
+  /* safariのCSSハック */
+  _::-webkit-full-page-media, _:future, :root #worklist{
+  width: 1040px;
+  }
+
+}
+@media(max-width:1024px){
+  /* オープニング */
+  #scrollsign{
+    top:45%;
+  }
+  #scroll{
+    top:calc( 45% + 120px);
+  }
+  /* WORKS */
+  #works{
+    padding: 25px;
+  }
+  /* 通常 */
+  #worklist{
+    width: 680px;
+  }
+  /* safariのCSSハック */
+  _::-webkit-full-page-media, _:future, :root #worklist{
+    width: 680px;
+  }
+
+}
+@media(max-width:800px){
+  /* 共通 */
+  h1{
+    font-size: 80px;
+    width: 600px;
+    margin: 100px calc(50% - 300px) 0px ;
+    /* REQUESTのmargin-topは id="requesttitle" で指定 */
+  }
+
+  /* WORKS */
+  #works{
+    padding: 25px;
+  }
+  /* 通常 */
+  #worklist{
+    width: 680px;
+  }
+  /* safariのCSSハック */
+  _::-webkit-full-page-media, _:future, :root #worklist{
+    width: 680px;
+  }
+}
+@media(max-width:720px){
+  /* 通常 */
+  #worklist{
+    width: 340px;
+  }
+  /* safariのCSSハック */
+  _::-webkit-full-page-media, _:future, :root #worklist{
+    width: 340px;
+  }
+
+@media(max-width:600px){
+  /* nav */
+  .nav{
+    display: none;
+  }
+  /* nav */
+  #show, #hide{
+    display: block;
+  }
+
+  /* あいさつ */
+  .greeting{
+    margin: 0 auto 100px;
+    height: 280px;
+  }
+  #logo{
+    width: 150px;
+    height: auto;
+    /* margin: 0; */
+    margin: 25px calc(50% - 75px) 0;
+  }
+  #greeting{
+    font-size: 36px;
+  }
+
+  /* WORKS */
+  #works{
+    padding:0;
+    margin:0;
+  }
+  /* プロフィール */
+  .profile{
+    font-size: 24px;
+  }
+  .profile span{
+    font-size: 16px;
+  }
+  .profile span span::before{
+    content: "\A";
+    white-space: pre;
+  }
+
+  /* form */
+  #checkbox{
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* ここからモバイル */
+@media(max-width:420px){
+ /* 共通 */
+  h1{
+    font-size: 54px;
+    width: 420px;
+    margin: 100px calc(50% - 210px) 0px ;
+    /* REQUESTのmargin-topは id="requesttitle" で指定 */
+  }
+    /* スクロールレベル */
+    .num{
+      top:50%;
+      font-size: 12px;
+    }
+    .num span::before{
+      content: "\A";
+      white-space: pre;
+    }
+  /* あいさつ */
+  .greeting{
+    margin: 0 auto;
+    height: 240px;
+  }
+  #logo{
+    width: 120px;
+    height: auto;
+    /* margin: 0; */
+    margin: 25px calc(50% - 60px) 0;
+  }
+  #greeting{
+    /* margin: 0 auto 300px; */
+    font-size: 24px;
+  }
+  .profile{
+    font-size: 24px;
+  }
+  .profile span{
+    font-size: 16px;
+  }
+ /* WORKS */
+/* 通常 */
+#works{
+  width: 100%;
+  height: auto;
+  align-content: center;
+}
+ul#worklist{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+#worklist li{
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  padding: 0em;
+  margin: 10px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .5);
+}
+.workimg{
+  width: 120px;
+  height: 120px;
+}
+  /* form */
+  form{
+    padding: 10px 30px;
+  }
+  ul{
+    margin: 20px;
+  }
+  li{
+    padding:0 0 5%;
+  }
+  input{
+    font-size: 14px;
+  }
+  #textarea{
+    padding: 0;
+  }
+  .btn{
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    margin: 0 calc(50% - 75px) 50px;
+    color: #fff;
+    background: #000;
+    font-size: 14px;
+  }
+  /* プロフィール */
+  .profile{
+    font-size: 12px;
+  }
+  .profile span{
+    font-size: 8px;
+  }
+  .profile span span::before{
+    content: "\A";
+    white-space: pre;
+  }
+  /* footer */
+  footer{
+    padding: 10px;
+  }
+}
+}
